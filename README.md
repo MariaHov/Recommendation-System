@@ -12,20 +12,21 @@ The services are containerized using Docker and managed with Docker Compose.
 ## Project Structure
 
 ```plaintext
-my_recommendation_system/
+Recommendation-System/
 │
 ├── generator/
-│   ├── Dockerfile
-│   ├── generator_service.py
-│   └── requirements.txt
+│   ├── Dockerfile                # Build instructions for Generator Service
+│   ├── generator_service.py      # Flask-based service generating recommendations
+│   └── requirements.txt          # Dependencies for Generator Service
 │
 ├── invoker/
-│   ├── Dockerfile
-│   ├── invoker_service.py
-│   └── requirements.txt
+│   ├── Dockerfile                # Build instructions for Invoker Service
+│   ├── invoker_service.py        # Flask-based service invoking Generator, with caching
+│   └── requirements.txt          # Dependencies for Invoker Service
 │
-└── docker-compose.yml
+└── docker-compose.yml            # Orchestrates services and Redis with Docker Compose
 ````
+
 ## Services
 - _Generator Service:_ Listens on port 5000. Generates a random number based on the model name and viewer ID.
 - _Invoker Service:_ Listens on port 5001. Makes parallel requests to the Generator Service, caches the results, and returns them.
@@ -61,7 +62,7 @@ To stop the running containers, use:
 ```angular2html
 docker-compose down
 ```
-This command will stop and remove the containers.
+This command will stop the containers.
 
 
 
