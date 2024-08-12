@@ -65,4 +65,7 @@ docker-compose down
 This command will stop the containers.
 
 
+## _! NOTE !_
+Part 2 of the task you can find in "part2" folder in this repository.
+
 
